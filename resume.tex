@@ -1,0 +1,145 @@
+\documentclass[a4paper,10pt]{article}
+
+% With thanks to Alessandro Plasmati for the basic LaTeX template used here: https://www.sharelatex.com/templates/cv-or-resume/professional-cv
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[margin=0.5in]{geometry}
+
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{titlesec}					%custom \section
+
+\usepackage{tabularx}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.60\paperheight}
+\setlength{\parindent}{0pt}
+
+%% define a few struts
+%% (from code by Claudio Beccari in TeX and TUG News, Vol. 2, 1993)
+\newcommand\Tstrut{\rule{0pt}{2.9ex}}         % "top" strut
+\newcommand\Bstrut{\rule[-1.2ex]{0pt}{0pt}}   % "bottom" strut
+\newcommand\TBstrut{\Tstrut\Bstrut}           % "top and bottom" strut
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Patrick \textsc{Perrier}
+	}\bigskip\par}
+\par{
+	\begin{tabularx}{\textwidth}{c X X c}
+		\hline
+		896 Stanstead Rd, Ottawa, ON & Cell: 226-989-6369 
+		& \href{mailto:paperrie@uwaterloo.ca}{paperrie@uwaterloo.ca}
+		& Github: \href{https://github.com/pperrier27}{pperrier27} \TBstrut \\
+		\hline
+	\end{tabularx}
+}
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Technical Skills}
+
+\begin{tabular}{rl}
+    \textsc{Proficient In:} & C, C++, Python \\
+    \textsc{Familiar With:} & C\#, Java, Bash, Javascript, VBScript, HTML, CSS, \LaTeX, Powershell
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+
+% Format for NEW sections is as follows
+
+% & POSITION at \textsc{COMPANY}, LOCATION \\ \textsc{DATE} & \emph{FURTHER POSITION DESCRIPTION, e.g. team}TEXT HERE}\\
+%&\footnotesize{TEXT}\\
+%&\footnotesize{MORE TEXT}\\
+%...
+%\multicolumn{2}{c}{•} \\   if another section is to come after the first one
+
+\begin{tabular}{r|p{15.4cm}}
+& Software Development Co-op at \textsc{Phoenix Interactive Design}, London, ON\\
+\textsc{Sept-Dec 2015} & \emph{VISTAatm Team}\\
+&\footnotesize{Rewrote internal log parsing utility using Visual C\# and Excel, adding usage options and greatly improving stability, reliability, and log processing power while maintaining performance.}\\
+&\footnotesize{Developed new internal tools and scripts for various uses (e.g. project reporting, ATM upgrades) using Powershell, Python, HTML, VBScript, and PTC Integrity.}\\
+
+\multicolumn{2}{c}{}\\
+& Software Developer Intern at \textsc{SMART Technologies}, Calgary, AB \\
+\textsc{Jan-Apr 2015}&\emph{Notebook Team}\\
+&\footnotesize{
+Added Google Breakpad-based crash reporting, menu buttons to access new add-ons, extended unit test coverage for Notebook SDK by 25\%, and fixed bugs for release 15.0 (April 2015) using C++/Objective-C++ and boost on both Windows and OSX.}\\
+&\footnotesize{Invented, planned, designed, and implemented an activity for Notebook LAB, using Javascript, Ember.js, Handlebars.js, HTML5, and CSS3.
+}\\
+
+\multicolumn{2}{c}{} \\
+& Product Verification Team Member at \textsc{Nakina Systems}, Kanata, ON \\
+\textsc{May-Aug 2014} & \emph{NI-Director Team}\\
+&\footnotesize{Tested and regressed all elements of NI-Director in preparation of a major product release.}\\
+&\footnotesize{Upgraded old webservice test cases into XML format via Python script for deployment into improved test architecture.}\\
+ 
+\end{tabular}
+
+\section{Projects}
+\begin{itemize}
+	\item {\textsc{\textbf{ImgurSwitcher}}}
+	\begin{itemize}
+		\item {Cross-platform Python script to download images from an Imgur album and set them as the desktop background when certain key combinations are pressed.}
+	\end{itemize}
+	
+	\item {\textsc{\textbf{HockeyHero}}}
+	\begin{itemize}
+		\item {Tinder for beer league hockey players. Currently in development using Glassfish and MySQL.}
+	\end{itemize}
+	
+	\item {\textsc{\textbf{WaterlooC Compiler}}}
+	\begin{itemize}
+		\item {C++ implementation of a full compiler toolchain for a restricted subset of the C language.}
+	\end{itemize}	
+\end{itemize}
+
+%Section: Education
+\section{Education}
+\textbf{University of Waterloo}, Waterloo, ON
+\begin{itemize}
+	\item Candidate for Bachelor of \textsc{Software Engineering}
+	\begin{itemize}
+		\item \textsc{2013-2018}
+	\end{itemize}
+\end{itemize}
+
+\section{Interests and Activities}
+\begin{itemize}
+	\item {Fan of hockey (go Sens!) and pick-up sports in general (I'll try anything once).}
+	\item {Wide variety of reading; favourite authors include Terry Pratchett and Jim Butcher.}
+	\item {Learning how to play guitar and saxophone, and generally a music lover from swing to rock to classical.}
+\end{itemize}
+
+\end{document}
